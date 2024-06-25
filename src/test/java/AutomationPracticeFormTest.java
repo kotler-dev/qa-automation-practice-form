@@ -60,9 +60,9 @@ public class AutomationPracticeFormTest {
 
         // State and City
         $("#react-select-3-input").setValue("H");
-        $(byText("Haryana")).click();
+        $("#stateCity-wrapper").$(byText("Haryana")).click();
         $("#react-select-4-input").setValue("K");
-        $(byText("Karnal")).click();
+        $("#stateCity-wrapper").$(byText("Karnal")).click();
 
         // Submit
         $("#submit").scrollTo().click();
