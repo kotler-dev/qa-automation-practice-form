@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterAll;
+import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +19,8 @@ public class AutomationPracticeFormTest {
         Configuration.timeout = 5000;
     }
 
-    @AfterAll
-    static void afterAll() {
+    @AfterEach
+    void afterEach() {
         closeWebDriver();
     }
 
@@ -46,7 +47,7 @@ public class AutomationPracticeFormTest {
 
         // Subjects
         $("#subjectsInput").setValue("C").scrollTo();
-        $(byText("Computer Science")).click();
+        $("#subjectsWrapper").$(byText("Computer Science")).click();
 
         // Hobbies
         // $("#hobbiesWrapper").$(".custom-control", 1).click();
@@ -69,7 +70,7 @@ public class AutomationPracticeFormTest {
 
         // Validate
         // $(".table-responsive").getText();
-        var table = $(".table-responsive");
+        SelenideElement table = $(".table-responsive");
         table.shouldHave(text("Student Name Morty Smith"));
         table.shouldHave(text("Student Email morty@smith.qa"));
         table.shouldHave(text("Gender Male"));
