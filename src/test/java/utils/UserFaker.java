@@ -12,7 +12,6 @@ public class UserFaker {
     private final Faker faker = new Faker(new Locale("en-EN"), new Random());
 
     public UserFaker() {
-//        Map<String, String> dateOfBirth;
     }
 
     enum Gender {
