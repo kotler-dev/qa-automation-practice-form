@@ -12,6 +12,7 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.headless = true;
+        Configuration.baseUrl = "https://demoqa.com";
     }
 
     @AfterEach

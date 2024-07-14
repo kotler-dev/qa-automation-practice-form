@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -15,13 +14,12 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class RegistrationPage {
 
-    public RegistrationPage setUrl(String url) {
-        Configuration.baseUrl = url;
+    public RegistrationPage openPage(String page) {
+        Selenide.open(page);
         return this;
     }
 
-    public RegistrationPage openPage(String page) {
-        Selenide.open(page);
+    public RegistrationPage removeAds() {
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
         return this;

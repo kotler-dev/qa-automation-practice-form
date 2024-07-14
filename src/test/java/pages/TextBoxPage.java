@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -9,19 +8,19 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class TextBoxPage {
 
-    public TextBoxPage setUrl(String url) {
-        Configuration.baseUrl = url;
+    public TextBoxPage openPage(String page) {
+        Selenide.open(page);
         return this;
     }
 
-    public TextBoxPage openPage(String page) {
-        Selenide.open(page);
+    public TextBoxPage removeAds() {
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
         return this;
@@ -44,7 +43,7 @@ public class TextBoxPage {
     private final SelenideElement fullNameInput = $("#userName");
 
     public TextBoxPage fillFullNameField(String fullName) {
-        fullNameInput.setValue(fullName);
+        fullNameInput.shouldBe(visible).setValue(fullName);
         return this;
     }
 
@@ -129,6 +128,7 @@ public class TextBoxPage {
     }
 
     private final SelenideElement permanentAddress = $("#permanentAddress");
+
     public TextBoxPage fillPermanentAddress(String permanentAddress) {
         this.permanentAddress.setValue(permanentAddress);
         return this;

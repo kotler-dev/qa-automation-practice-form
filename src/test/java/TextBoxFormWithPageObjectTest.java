@@ -19,8 +19,8 @@ public class TextBoxFormWithPageObjectTest extends TestBase {
 
         TextBoxPage textBoxPage = new TextBoxPage();
         textBoxPage
-                .setUrl("https://demoqa.com")
                 .openPage("/text-box")
+                .removeAds()
                 .fillFullNameField(userFaker.getFullName())
                 .fillStudentUserEmailField(userFaker.getEmail())
                 .fillCurrentAddress(userFaker.getCurrentAddress())

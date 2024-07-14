@@ -19,8 +19,8 @@ public class AutomationPracticeFormWithPageObjectTest extends TestBase {
 
         RegistrationPage registrationPage = new RegistrationPage();
         registrationPage
-                .setUrl("https://demoqa.com")
                 .openPage("/automation-practice-form")
+                .removeAds()
                 .fillStudentFirstNameField(userFaker.getFirstName())
                 .fillStudentLastNameField(userFaker.getLastName())
                 .fillStudentGenderField(userFaker.getGender())
@@ -47,8 +47,8 @@ public class AutomationPracticeFormWithPageObjectTest extends TestBase {
 
         RegistrationPage registrationPage = new RegistrationPage();
         registrationPage
-                .setUrl("https://demoqa.com")
                 .openPage("/automation-practice-form")
+                .removeAds()
                 .fillStudentFirstNameField(userFaker.getFirstName())
                 .fillStudentLastNameField(userFaker.getLastName())
                 .fillStudentGenderField(userFaker.getGender())
@@ -84,8 +84,8 @@ public class AutomationPracticeFormWithPageObjectTest extends TestBase {
 
         RegistrationPage registrationPage = new RegistrationPage();
         registrationPage
-                .setUrl("https://demoqa.com")
                 .openPage("/automation-practice-form")
+                .removeAds()
                 .fillStudentFirstNameField(userFaker.getFirstName())
                 .fillStudentLastNameField(userFaker.getLastName())
                 .fillStudentUserEmailField(userFaker.getEmail())
