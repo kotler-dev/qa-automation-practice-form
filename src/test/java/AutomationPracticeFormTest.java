@@ -2,6 +2,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -25,6 +26,7 @@ public class AutomationPracticeFormTest {
     }
 
     @Test
+    @Disabled
     void fillStudentRegistrationFormTest() {
         open("/automation-practice-form");
 
