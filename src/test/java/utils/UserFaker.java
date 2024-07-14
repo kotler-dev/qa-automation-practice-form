@@ -52,6 +52,22 @@ public class UserFaker {
         return this;
     }
 
+    private String fullName;
+    public String getFullName() {
+        return this.fullName;
+    }
+
+    public UserFaker setFullName(String fullName) {
+        if (fullName == null | Objects.equals(fullName, "")) {
+            setFirstName(null);
+            setLastName(null);
+            this.fullName = getFirstName() + " " + getLastName();
+        } else {
+            this.fullName = fullName;
+        }
+        return this;
+    }
+
     private String email;
 
     public String getEmail() {
@@ -203,6 +219,21 @@ public class UserFaker {
                 "Hindi", "Civics"
         };
         this.currentAddress = faker.options().option(subjects);
+        return this;
+    }
+
+    private String permanentAddress;
+    public String getPermanentAddress() {
+        return this.permanentAddress;
+    }
+    public UserFaker setPermanentAddress() {
+        String[] data = {
+                "Arts", "History", "English", "Chemistry",
+                "Computer Science", "Commerce", "Economics", "Maths",
+                "Social Studies", "Accounting", "Physics", "Biology",
+                "Hindi", "Civics"
+        };
+        this.permanentAddress = faker.options().option(data);
         return this;
     }
 

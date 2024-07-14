@@ -1,5 +1,5 @@
-import components.ModalTableWidget;
-import components.RegistrationPage;
+import pages.components.ModalTableWidget;
+import pages.RegistrationPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import utils.UserFaker;
